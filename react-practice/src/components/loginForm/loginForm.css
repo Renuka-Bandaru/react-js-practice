@@ -1,0 +1,11 @@
+.form-card{
+    background-color: aqua;
+    width: 50%;
+    margin: auto;
+}
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    
+}
