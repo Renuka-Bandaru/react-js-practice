@@ -5,15 +5,18 @@ import './apiPractice.css';
 function ApiPractice() {
     const user = sessionStorage.getItem("name");
     const userpass = sessionStorage.getItem("access")
-    const [movies, setMovies] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const fetchMoviesAxios = async () => {
+
+// fetching products by using fake api axios get method
+
+    const fetchProductsAxios = async () => {
         setLoading(true)
         try {
             const response = await axios.get("https://fakestoreapi.com/products")
-            const movieList = response.data
-            console.log(movieList)
-            setMovies(movieList)
+            const productList = response.data
+            console.log(productList)
+            setProducts(productList)
         } catch (error) {
             console.error("Axios error:", error)
         } finally {
@@ -22,20 +25,20 @@ function ApiPractice() {
     }
     return (
         <>
-        <div>
-            <h1>Hi {user}</h1>
-            <h1>Products you may like</h1>
-        
-        <button onClick = {fetchMoviesAxios}>Click here</button>
-        {/* <h1>{movies.map(ele => ele.title )}</h1> */}
-        </div>
-        <div>
-            {movies.map(ele => {
-                return(
-                    <img className="data" src={ele.image}/>
-                )
-            })}
-        </div>
+            <div>
+                <h1>Hi {user}</h1>
+                <h1>Products you may like</h1>
+
+                <button onClick={fetchProductsAxios}>Click here</button>
+                {/* <h1>{movies.map(ele => ele.title )}</h1> */}
+            </div>
+            <div>
+                {products.map(ele => {
+                    return (                             // map function to display products
+                        <img className="data" src={ele.image} />
+                    )
+                })}
+            </div>
         </>
     )
 };
