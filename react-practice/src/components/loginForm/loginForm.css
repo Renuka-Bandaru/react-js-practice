@@ -9,3 +9,7 @@ button{
     border: none;
     
 }
+.product-image{
+    max-height: 200px;
+    margin: 20px;
+}
