@@ -35,7 +35,7 @@ function ApiPractice() {
             <div>
                 {products.map(ele => {
                     return (                             // map function to display products
-                        <img className="data" src={ele.image} />
+                        <img className="data" src={ele.image} alt="" />
                     )
                 })}
             </div>
