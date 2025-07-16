@@ -4,7 +4,7 @@ import './apiPractice.css';
 
 function ApiPractice() {
     const user = sessionStorage.getItem("name");
-    const userpass = sessionStorage.getItem("access")
+    // const userpass = sessionStorage.getItem("access")
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -16,6 +16,7 @@ function ApiPractice() {
             const response = await axios.get("https://fakestoreapi.com/products")
             const productList = response.data
             console.log(productList)
+            console.log(loading)
             setProducts(productList)
         } catch (error) {
             console.error("Axios error:", error)
