@@ -4,9 +4,8 @@ function Header(){
     return(
         <nav>
             <ul className="navbar">
-                <NavLink ><Link to="home" className="list-items"><a href="/home">Home</a></Link></NavLink>
-                <li><Link to="apiPractice" className="list-items"><a href="/apiPractice">apiPractice</a></Link></li>
-                <li><Link to="loginForm" className="list-items"><a href="/loginForm"> loginForm</a></Link></li>
+                <NavLink ><Link to="home" ><a className="list-items" href="/home">Home</a></Link></NavLink>
+                <NavLink><Link to="loginForm" ><a href="/loginForm" className="list-items"> loginForm</a></Link></NavLink>
             </ul>
         </nav>
     )
